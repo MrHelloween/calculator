@@ -1,9 +1,14 @@
 import calculator
 
 
-def menu(number_menu):
+def menu():
+    print('''1. calculator \n2. Exit''')
+
+    number_menu = int(input('Choose a number: '))
     if number_menu == 1:
         under_the_menu_calculator(number_menu)
+    elif number_menu == 2:
+        print('The calculator has finished its work')
 
 
 def under_the_menu_calculator(number_menu):
@@ -14,18 +19,29 @@ def under_the_menu_calculator(number_menu):
 3. multiplication(*)
 4. division(/)
 5. exponentiation(**)
-6. square 
+6. square
+7. back 
         ''')
+
     under_the_menu_number = int(input('Select an operation: '))
+    exit = ''
     if under_the_menu_number == 6:
-        a = int(input('Enter number: '))
-        result = operation(under_the_menu_number, a, )
-        print(f'Result operation: {result:,.2f}')
+        while exit.lower() != 't':
+            a = int(input('Enter number: '))
+            result = operation(under_the_menu_number, a, )
+            print(f'Result operation: {result:,.2f}')
+            exit = input('if you want to exit enter T/t if not F/f: ')
+        under_the_menu_calculator(1)
+    elif under_the_menu_number == 7:
+        menu()
     else:
-        a = int(input('Enter the first number: '))
-        b = int(input('Enter the second digit: '))
-        result = operation(under_the_menu_number, a, b)
-        print(f'Result operation: {result:,.2f}')
+        while exit.lower() != 't':
+            a = int(input('Enter the first number: '))
+            b = int(input('Enter the second digit: '))
+            result = operation(under_the_menu_number, a, b)
+            print(f'Result operation: {result:,.2f}')
+            exit = input('if you want to exit enter T/t if not F/f: ')
+        under_the_menu_calculator(1)
 
 
 def operation(num, a, b=None):
@@ -43,7 +59,4 @@ def operation(num, a, b=None):
         return calculator.sqrt(a)
 
 
-print('''1. calculator''')
-
-number_menu = int(input('Choose a number: '))
-menu(number_menu)
+menu()
