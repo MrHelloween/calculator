@@ -69,4 +69,4 @@ def operation(num, a, b=None):
         return calculator.sqrt(a)
 
 
-menu()
+main()
