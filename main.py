@@ -1,4 +1,5 @@
 import calculator
+import BMI
 
 
 def main():
@@ -8,10 +9,10 @@ def main():
 
 
 def menu():
-    print('''1. calculator \n2. Exit''')
+    print('''1. calculator \n2. BMI   \n3. Exit''')
 
     number_menu = int(input('Choose a number: '))
-    if number_menu == 2:
+    if number_menu == 3:
         print('The calculator has finished its work')
     else:
         return number_menu
@@ -28,7 +29,8 @@ def under_the_menu_calculator(number_menu):
 6. square
 7. back 
         ''')
-
+    elif number_menu == 2:
+        return 2.1
     under_the_menu_number = int(input('Select an operation: '))
     return under_the_menu_number
 
@@ -44,6 +46,11 @@ def test(num):
         under_the_menu_calculator(1)
     elif num == 7:
         menu()
+    elif num == 2.1:
+        weight = int(input('Enter weight (in kilograms): '))
+        height = int(input('Enter height (in centimeters): '))
+        result = BMI.bmi(weight,height)
+        print(f'BMI: {result}')
     else:
         while exit.lower() != 't':
             a = int(input('Enter the first number: '))
