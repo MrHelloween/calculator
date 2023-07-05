@@ -36,44 +36,52 @@ def under_the_menu_calculator(number_menu):
 
 
 def test(num):
-    exit = ''
-    if num == 6:
-        while exit.lower() != 't':
-            a = int(input('Enter number: '))
-            result = operation(num, a, )
-            print(f'Result operation: {result:,.2f}')
-            exit = input('if you want to exit enter T/t if not F/f: ')
-        under_the_menu_calculator(1)
-    elif num == 7:
-        menu()
-    elif num == 2.1:
-        weight = int(input('Enter weight (in kilograms): '))
-        height = int(input('Enter height (in centimeters): '))
-        result = BMI.bmi(weight,height)
-        print(f'BMI: {result}')
-    else:
-        while exit.lower() != 't':
-            a = int(input('Enter the first number: '))
-            b = int(input('Enter the second digit: '))
-            result = operation(num, a, b)
-            print(f'Result operation: {result:,.2f}')
-            exit = input('if you want to exit enter T/t if not F/f: ')
-        under_the_menu_calculator(1)
+    try:
+        exit = ''
+        if num == 6:
+            while exit.lower() != 't':
+                a = int(input('Enter number: '))
+                result = operation(num, a, )
+                print(f'Result operation: {result:,.2f}')
+                exit = input('if you want to exit enter T/t if not F/f: ')
+            main()
+        elif num == 7:
+            menu()
+        elif num == 2.1:
+            weight = int(input('Enter weight (in kilograms): '))
+            height = int(input('Enter height (in centimeters): '))
+            result = BMI.bmi(weight,height)
+            print(f'BMI: {result}')
+        else:
+            while exit.lower() != 't':
+                a = int(input('Enter the first number: '))
+                b = int(input('Enter the second digit: '))
+                result = operation(num, a, b)
+                print(f'Result operation: {result:,.2f}')
+                exit = input('if you want to exit enter T/t if not F/f: ')
+            main()
+    except:
+        pass
 
 
 def operation(num, a, b=None):
-    if num == 1:
-        return calculator.addition(a, b)
-    elif num == 2:
-        return calculator.subtraction(a, b)
-    elif num == 3:
-        return calculator.multiplication(a, b)
-    elif num == 4:
-        return calculator.division(a, b)
-    elif num == 5:
-        return calculator.exponentiation(a, b)
-    elif num == 6:
-        return calculator.sqrt(a)
+    try:
+        if num == 1:
+            return calculator.addition(a, b)
+        elif num == 2:
+            return calculator.subtraction(a, b)
+        elif num == 3:
+            return calculator.multiplication(a, b)
+        elif num == 4:
+            return calculator.division(a, b)
+        elif num == 5:
+            return calculator.exponentiation(a, b)
+        elif num == 6:
+            return calculator.sqrt(a)
+    except ZeroDivisionError:
+        print('Error: division by zero')
+    except:
+        print('Error')
 
 
 main()
