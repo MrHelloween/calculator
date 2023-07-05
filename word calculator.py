@@ -1,6 +1,7 @@
 def main():
     text = get_text()
-    get_words(text)
+    list_words = get_words(text)
+    get_the_word_count(list_words)
 
 
 def get_text():
@@ -12,7 +13,7 @@ def get_text():
 
 def get_words(text):
     list_words = text.split()
-    delete_back = ['.', ',', '?', ':', '!', ')','"']
+    delete_back = ['.', ',', '?', ':', '!', ')', '"']
     delete_frond = ['(', '"']
     new_list = []
     for i in list_words:
@@ -22,7 +23,16 @@ def get_words(text):
             new_list.append(i[1:])
         else:
             new_list.append(i)
-    print(new_list)
+    return new_list
+
+
+def get_the_word_count(words):
+    result = {}
+    for i in words:
+        if i in result:
+            result[i] += 1
+        else:
+            result[i] = 1
 
 
 if __name__ == '__main__':
