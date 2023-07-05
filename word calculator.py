@@ -42,7 +42,7 @@ def get_the_word_count(words):
 
 def filter(dict_words):
     dict = {k: v for k, v in dict_words.items() if v > 1}
-    return  dict
+    return dict
 
 
 if __name__ == '__main__':
