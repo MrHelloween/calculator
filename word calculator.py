@@ -1,7 +1,7 @@
 def main():
     text = get_text()
     list_words = get_words(text)
-    get_the_word_count(list_words)
+    count = get_the_word_count(list_words)
 
 
 def get_text():
@@ -28,12 +28,12 @@ def get_words(text):
 
 def get_the_word_count(words):
     result = {}
+    new_result = {}
     for i in words:
         if i in result:
             result[i] += 1
         else:
             result[i] = 1
-
 
 if __name__ == '__main__':
     main()
