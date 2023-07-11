@@ -1,6 +1,6 @@
 import calculator
 import BMI
-
+import Word_count
 
 def main():
     number_menu = menu()
@@ -9,10 +9,10 @@ def main():
 
 
 def menu():
-    print('''1. calculator \n2. BMI   \n3. Exit''')
+    print('''1. calculator \n2. BMI  \n3. Word count \n4. Exit''')
 
     number_menu = int(input('Choose a number: '))
-    if number_menu == 3:
+    if number_menu == 4:
         print('The calculator has finished its work')
     else:
         return number_menu
@@ -30,10 +30,12 @@ def under_the_menu_calculator(number_menu):
 7. back 
         ''')
     elif number_menu == 2:
-        return 2.1
-    under_the_menu_number = int(input('Select an operation: '))
-    return under_the_menu_number
 
+        under_the_menu_number = int(input('Select an operation: '))
+        return under_the_menu_number
+    elif number_menu == 3:
+        print('''1. File with text \n2. Enter text''')
+        num_menu = int(input('Enter num: '))
 
 def test(num):
     try:
@@ -83,5 +85,14 @@ def operation(num, a, b=None):
     except:
         print('Error')
 
+def count_words(num_menu):
+    if num_menu == 1:
+        text_txt = input('Enter name file with text: ')
+        text_line = Word_count.get_words(text_txt)
+        list_words_count = Word_count.get_words(text_line)
+        filter_words_count = Word_count.filter(list_words_count)
+        print(filter_words_count)
 
-main()
+
+if __name__ == '__main__':
+    main()
