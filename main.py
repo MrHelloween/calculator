@@ -94,7 +94,12 @@ def count_words(num_menu):
         result = Word_count.get_the_word_count(list_words_count)
         filter_words_count = Word_count.filter(result)
         print(filter_words_count)
-
+    elif num_menu == 2:
+        text = input('Enter text: ')
+        list_words_count = Word_count.get_words(text)
+        result = Word_count.get_the_word_count(list_words_count)
+        filter_words_count = Word_count.filter(result)
+        print(filter_words_count)
 
 if __name__ == '__main__':
     main()
