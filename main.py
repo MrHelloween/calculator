@@ -36,6 +36,7 @@ def under_the_menu_calculator(number_menu):
     elif number_menu == 3:
         print('''1. File with text \n2. Enter text''')
         num_menu = int(input('Enter num: '))
+        count_words(num_menu)
 
 def test(num):
     try:
@@ -88,9 +89,10 @@ def operation(num, a, b=None):
 def count_words(num_menu):
     if num_menu == 1:
         text_txt = input('Enter name file with text: ')
-        text_line = Word_count.get_words(text_txt)
+        text_line = Word_count.get_text(text_txt)
         list_words_count = Word_count.get_words(text_line)
-        filter_words_count = Word_count.filter(list_words_count)
+        result = Word_count.get_the_word_count(list_words_count)
+        filter_words_count = Word_count.filter(result)
         print(filter_words_count)
 
 

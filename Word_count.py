@@ -1,12 +1,12 @@
-def main():
-    text = get_text()
+def main(text):
+    text = get_text(text)
     list_words = get_words(text)
     count = get_the_word_count(list_words)
     result_filter = filter(count)
     print(result_filter)
 
 
-def get_text():
+def get_text(text):
     text = open('text.txt', 'r')
     text_line = text.read()
     text.close()
@@ -14,6 +14,7 @@ def get_text():
 
 
 def get_words(text):
+
     list_words = text.split()
     delete_back = ['.', ',', '?', ':', '!', ')', '"']
     delete_frond = ['(', '"']
@@ -46,4 +47,4 @@ def filter(dict_words):
 
 
 if __name__ == '__main__':
-    main()
+    main('text.txt')
