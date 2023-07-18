@@ -29,10 +29,12 @@ def under_the_menu_calculator(number_menu):
 6. square
 7. back 
         ''')
-    elif number_menu == 2:
-
         under_the_menu_number = int(input('Select an operation: '))
         return under_the_menu_number
+    elif number_menu == 2:
+
+
+        return 3
     elif number_menu == 3:
         print('''1. File with text \n2. Enter text''')
         num_menu = int(input('Enter num: '))
@@ -50,7 +52,7 @@ def test(num):
             main()
         elif num == 7:
             menu()
-        elif num == 2.1:
+        elif num == 2:
             weight = int(input('Enter weight (in kilograms): '))
             height = int(input('Enter height (in centimeters): '))
             result = BMI.bmi(weight,height)
