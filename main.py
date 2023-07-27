@@ -28,7 +28,8 @@ def under_the_menu_calculator(number_menu):
 4. division(/)
 5. exponentiation(**)
 6. square
-7. back 
+7. Remainder of division(%)
+8. back 
         ''')
         under_the_menu_number = int(input('Select an operation: '))
         return under_the_menu_number
@@ -39,7 +40,8 @@ def under_the_menu_calculator(number_menu):
         print('''1. File with text \n2. Enter text''')
         num_menu = int(input('Enter num: '))
         count_words(num_menu)
-        return  None
+        return None
+
 
 def test(num):
     try:
@@ -51,10 +53,10 @@ def test(num):
                 print(f'Result operation: {result:,.2f}')
                 exit = input('if you want to exit enter T/t if not F/f: ')
             main()
-        elif num == 7:
+        elif num == 8:
             menu()
         elif num == 2:
-            while exit.lower() !='t':
+            while exit.lower() != 't':
                 weight = int(input('Enter weight (in kilograms): '))
                 height = int(input('Enter height (in centimeters): '))
                 result = BMI.bmi(weight, height)
@@ -87,6 +89,8 @@ def operation(num, a, b=None):
             return calculator.exponentiation(a, b)
         elif num == 6:
             return calculator.sqrt(a)
+        elif num == 7:
+            return calculator.remainder(a,b)
     except ZeroDivisionError:
         print('Error: division by zero')
     except:
